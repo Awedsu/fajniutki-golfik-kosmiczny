@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://bx2umxb45if76"]
 
-[node name="Label" type="Label" unique_id=744790428]
-offset_left = 113.0
-offset_top = 81.0
-offset_right = 214.0
-offset_bottom = 104.0
-text = "japierdole xd"
+[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="2_06tve"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://rakieta.png" id="2_i3osk"]
+[ext_resource type="Texture2D" uid="uid://dmn4037qe5nkv" path="res://ziemia.png" id="3_i3osk"]
+
+[node name="Gra" type="Node2D" unique_id=1531625699]
+
+[node name="Rakieta" type="Sprite2D" parent="." unique_id=355452473 node_paths=PackedStringArray("planeta")]
+position = Vector2(365.99997, 568)
+scale = Vector2(0.1437729, 0.13107651)
+texture = ExtResource("2_i3osk")
+script = ExtResource("2_06tve")
+planeta = NodePath("../Ziemia")
+
+[node name="Ziemia" type="Sprite2D" parent="." unique_id=1907805458]
+position = Vector2(115, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_i3osk")
