@@ -5,22 +5,23 @@ var predkosc: Vector2 = Vector2(0, 0)
 var przyspieszenie: Vector2 = Vector2(0, 0)
 
 # --- Parametry Grawitacji ---
-var stala_grawitacyjna: float = 50000000.0 # Pamiętaj o swojej wartości!
+var stala_grawitacyjna: float = 50000000.0 # Zostaw tu swoją wartość!
 var masa_planety: float = 5.0
 
 @export var planeta: Node2D
+
+# --- NOWE: Parametry Stacji ---
+@export var stacja: Node2D
+var promien_kolizji: float = 80.0 # Jak blisko trzeba podlecieć, żeby zadokować
 
 var w_locie: bool = false
 var stala_sily_wystrzalu: float = 1500.0 
 
 func _process(_delta: float) -> void:
-	# Jeśli rakieta leci, przestaje śledzić myszkę
 	if w_locie:
 		return
 		
 	var pozycja_myszy = get_global_mouse_position()
-	
-	# Obracamy rakietę w stronę myszy
 	look_at(pozycja_myszy)
 	rotation += deg_to_rad(90)
 
@@ -53,5 +54,21 @@ func _physics_process(delta: float) -> void:
 	# 2. CAŁKOWANIE NUMERYCZNE (RUCH)
 	predkosc += przyspieszenie * delta
 	position += predkosc * delta
-	
 	przyspieszenie = Vector2(0, 0)
+	
+	# --- NOWE: Sprawdzanie dokowania (Kolizja matematyczza) ---
+	if stacja:
+		# Obliczamy wektor między rakietą a stacją i sprawdzamy jego długość (w pikselach)
+		var dystans_do_stacji = position.distance_to(stacja.position)
+		
+		if dystans_do_stacji < promien_kolizji:
+			print("DOKOWANIE UDANE! Wygrywasz!")
+			
+			# Zatrzymujemy rakietę
+			predkosc = Vector2(0, 0)
+			
+			# "Przylepiamy" rakietę do środka stacji dla fajnego efektu
+			position = stacja.position
+			
+			# Wyłączamy dalsze przeliczanie fizyki
+			set_physics_process(false)

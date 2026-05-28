@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://doccqp33b44r3"]
+
+[ext_resource type="Script" uid="uid://c46yibm8483a4" path="res://menu.gd" id="1_lti8b"]
+
+[node name="Menu" type="Control" unique_id=779856813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1003114796]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 436.0
+offset_bottom = 165.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1481254286]
+layout_mode = 2
+text = "START"
+
+[node name="Poziomy" type="Button" parent="VBoxContainer" unique_id=1014349373]
+layout_mode = 2
+text = "POZIOMY"
+
+[node name="Wyjdz" type="Button" parent="VBoxContainer" unique_id=1504825363]
+layout_mode = 2
+text = "WYJDŹ
+"

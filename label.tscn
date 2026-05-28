@@ -3,17 +3,34 @@
 [ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="2_06tve"]
 [ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://rakieta.png" id="2_i3osk"]
 [ext_resource type="Texture2D" uid="uid://dmn4037qe5nkv" path="res://ziemia.png" id="3_i3osk"]
+[ext_resource type="Texture2D" uid="uid://bgdhomf0ob0w7" path="res://finish.png" id="4_02dvo"]
+[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="5_xkqyu"]
 
 [node name="Gra" type="Node2D" unique_id=1531625699]
 
-[node name="Rakieta" type="Sprite2D" parent="." unique_id=355452473 node_paths=PackedStringArray("planeta")]
+[node name="Rakieta" type="Sprite2D" parent="." unique_id=355452473 node_paths=PackedStringArray("planeta", "stacja")]
 position = Vector2(365.99997, 568)
 scale = Vector2(0.1437729, 0.13107651)
 texture = ExtResource("2_i3osk")
 script = ExtResource("2_06tve")
 planeta = NodePath("../Ziemia")
+stacja = NodePath("../Stacja")
 
 [node name="Ziemia" type="Sprite2D" parent="." unique_id=1907805458]
 position = Vector2(115, 125)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_i3osk")
+
+[node name="Stacja" type="Sprite2D" parent="." unique_id=2035406562]
+position = Vector2(382, 26)
+scale = Vector2(0.24626866, 0.44029847)
+texture = ExtResource("4_02dvo")
+
+[node name="Button" type="Button" parent="." unique_id=1190058024]
+offset_left = 682.0
+offset_top = 47.0
+offset_right = 724.0
+offset_bottom = 80.0
+text = "ZRESETUJ LOT
+"
+script = ExtResource("5_xkqyu")
