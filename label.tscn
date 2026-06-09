@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dmn4037qe5nkv" path="res://ziemia.png" id="3_i3osk"]
 [ext_resource type="Texture2D" uid="uid://bgdhomf0ob0w7" path="res://finish.png" id="4_02dvo"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="5_xkqyu"]
+[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="6_0u4ol"]
 
 [node name="Gra" type="Node2D" unique_id=1531625699]
 
@@ -34,3 +35,12 @@ offset_bottom = 80.0
 text = "ZRESETUJ LOT
 "
 script = ExtResource("5_xkqyu")
+
+[node name="PrzyciskMenu" type="Button" parent="." unique_id=157156488]
+offset_left = 674.0
+offset_top = 104.0
+offset_right = 811.0
+offset_bottom = 135.0
+text = "WRÓĆ DO MENU
+"
+script = ExtResource("6_0u4ol")
