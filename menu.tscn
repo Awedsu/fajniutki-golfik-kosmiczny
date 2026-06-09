@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://doccqp33b44r3"]
 
 [ext_resource type="Script" uid="uid://c46yibm8483a4" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="VideoStream" uid="uid://bjjbxtfcu6eqj" path="res://fajniutki.ogv" id="2_4hy44"]
+[ext_resource type="Texture2D" uid="uid://b6ifon43l564o" path="res://cosmo-background.jpg" id="2_ouk20"]
+[ext_resource type="Texture2D" uid="uid://c1wm20rc0e7r8" path="res://logo.png" id="3_mae5d"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4hy44"]
+blend_mode = 1
 
 [node name="Menu" type="Control" unique_id=779856813]
 layout_mode = 3
@@ -10,6 +16,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lti8b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=463352193]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -155.0
+offset_right = 136.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ouk20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TextureRect" unique_id=17818349]
+material = SubResource("CanvasItemMaterial_4hy44")
+layout_mode = 1
+offset_left = 136.0
+offset_top = 155.0
+offset_right = 622.0
+offset_bottom = 393.0
+stream = ExtResource("2_4hy44")
+autoplay = true
+loop = true
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1712559897]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -401.0
+offset_top = 162.0
+offset_right = 400.0
+offset_bottom = 476.0
+grow_horizontal = 2
+texture = ExtResource("3_mae5d")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1003114796]
 layout_mode = 1
