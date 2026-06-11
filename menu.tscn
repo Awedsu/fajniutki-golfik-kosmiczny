@@ -88,3 +88,8 @@ text = "POZIOMY"
 layout_mode = 2
 text = "WYJDŹ
 "
+
+[node name="UfoTimer" type="Timer" parent="." unique_id=1939367193]
+autostart = true
+
+[connection signal="timeout" from="UfoTimer" to="." method="_on_ufo_timer_timeout"]

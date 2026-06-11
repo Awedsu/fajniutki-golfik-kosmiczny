@@ -26,9 +26,10 @@ size = Vector2(278.21594, 518.77997)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bobpo"]
 size = Vector2(422.30292, 65.86441)
 
-[node name="Gra" type="Node2D" unique_id=1531625699]
+[node name="Poziom1" type="Node2D" unique_id=1531625699]
 
 [node name="Tlo" type="ColorRect" parent="." unique_id=1501720601]
+visible = false
 z_index = -10
 offset_left = -43.0
 offset_top = -42.0
@@ -37,6 +38,7 @@ offset_bottom = 767.0
 color = Color(0.0253638, 0.0253638, 0.025363795, 1)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=431260719]
+visible = false
 z_index = -5
 position = Vector2(640, 360)
 amount = 100
