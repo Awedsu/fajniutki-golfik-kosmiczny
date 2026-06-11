@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dxoqcxffual6s"]
+
+[ext_resource type="Script" uid="uid://c4ui5jnhmuuw4" path="res://planeta.gd" id="1_8xq8f"]
+[ext_resource type="Texture2D" uid="uid://dmn4037qe5nkv" path="res://ziemia.png" id="2_lyjbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plgr5"]
+radius = 73.02739
+
+[node name="Planeta" type="StaticBody2D" unique_id=902311260 groups=["planety"]]
+script = ExtResource("1_8xq8f")
+
+[node name="Ziemia" type="Sprite2D" parent="." unique_id=1137923935]
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("2_lyjbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709909821]
+shape = SubResource("CircleShape2D_plgr5")

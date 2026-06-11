@@ -23,9 +23,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -136.0
-offset_top = -155.0
+offset_top = -120.0
 offset_right = 136.0
-offset_bottom = 130.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ouk20")
@@ -35,12 +35,17 @@ stretch_mode = 5
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TextureRect" unique_id=17818349]
 material = SubResource("CanvasItemMaterial_4hy44")
 layout_mode = 1
-offset_left = 136.0
-offset_top = 155.0
-offset_right = 622.0
-offset_bottom = 393.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 147.0
+offset_right = 188.0
+offset_bottom = 338.0
+grow_horizontal = 2
 stream = ExtResource("2_4hy44")
 autoplay = true
+expand = true
 loop = true
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1712559897]
@@ -48,10 +53,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -401.0
-offset_top = 162.0
-offset_right = 400.0
-offset_bottom = 476.0
+offset_left = -400.0
+offset_top = 248.0
+offset_right = 401.0
+offset_bottom = 562.0
 grow_horizontal = 2
 texture = ExtResource("3_mae5d")
 expand_mode = 1
@@ -59,17 +64,17 @@ stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1003114796]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.711
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -202.5
-offset_top = -68.0
-offset_right = 202.5
-offset_bottom = 68.0
+anchor_bottom = 0.711
+offset_left = -202.0
+offset_top = -143.92001
+offset_right = 203.0
+offset_bottom = -38.920013
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=1481254286]
 layout_mode = 2

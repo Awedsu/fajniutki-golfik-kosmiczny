@@ -1,74 +1,59 @@
-extends Sprite2D
+extends CharacterBody2D
 
 var masa: float = 1.0
-var predkosc: Vector2 = Vector2(0, 0)
-var przyspieszenie: Vector2 = Vector2(0, 0)
+var predkosc: Vector2 = Vector2.ZERO
+var przyspieszenie: Vector2 = Vector2.ZERO
 
-# --- Parametry Grawitacji ---
-var stala_grawitacyjna: float = 50000000.0 # Zostaw tu swoją wartość!
-var masa_planety: float = 5.0
-
-@export var planeta: Node2D
-
-# --- NOWE: Parametry Stacji ---
-@export var stacja: Node2D
-var promien_kolizji: float = 80.0 # Jak blisko trzeba podlecieć, żeby zadokować
+var stala_grawitacyjna: float = 7500000.0
 
 var w_locie: bool = false
-var stala_sily_wystrzalu: float = 1500.0 
+var zadokowana: bool = false
+var stala_sily_wystrzalu: float = 1000.0 
 
 func _process(_delta: float) -> void:
-	if w_locie:
-		return
-		
-	var pozycja_myszy = get_global_mouse_position()
-	look_at(pozycja_myszy)
+	if w_locie or zadokowana: return
+	look_at(get_global_mouse_position())
 	rotation += deg_to_rad(90)
 
 func _input(event: InputEvent) -> void:
-	if w_locie:
-		return
-		
+	if w_locie or zadokowana: return
+	
 	if event is InputEventMouseButton and not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		var pozycja_myszy = get_global_mouse_position()
-		var kierunek_wystrzalu = (pozycja_myszy - position).normalized()
-		
-		predkosc = kierunek_wystrzalu * stala_sily_wystrzalu
+		predkosc = (get_global_mouse_position() - global_position).normalized() * stala_sily_wystrzalu
 		w_locie = true
 
 func _physics_process(delta: float) -> void:
-	if not w_locie:
-		return
+	if not w_locie or zadokowana: return
 	
-	# 1. PRAWO POWSZECHNEGO CIĄŻENIA NEWTONA
-	if planeta:
-		var wektor_odleglosci = planeta.position - position
-		var r_kwadrat = wektor_odleglosci.length_squared()
-		
-		if r_kwadrat > 10:
-			var kierunek = wektor_odleglosci.normalized()
-			var wartosc_sily = stala_grawitacyjna * (masa_planety * masa) / r_kwadrat
-			var wektor_sily = kierunek * wartosc_sily
-			przyspieszenie += wektor_sily / masa
+# Pobieramy wszystkie planety na mapie z naszej grupy
+	var planety = get_tree().get_nodes_in_group("planety")
+	
+	# Liczymy grawitację dla KAŻDEJ planety z osobna i dodajemy do siebie
+	for p in planety:
+		var wektor_odleglosci = p.global_position - global_position
+		var r_kwadrat = max(wektor_odleglosci.length_squared(), 1000.0) 
+		var kierunek = wektor_odleglosci.normalized()
+		var wartosc_sily = stala_grawitacyjna * (p.masa * masa) / r_kwadrat
+		przyspieszenie += (kierunek * wartosc_sily) / masa
 
-	# 2. CAŁKOWANIE NUMERYCZNE (RUCH)
 	predkosc += przyspieszenie * delta
-	position += predkosc * delta
-	przyspieszenie = Vector2(0, 0)
 	
-	# --- NOWE: Sprawdzanie dokowania (Kolizja matematyczza) ---
-	if stacja:
-		# Obliczamy wektor między rakietą a stacją i sprawdzamy jego długość (w pikselach)
-		var dystans_do_stacji = position.distance_to(stacja.position)
+# Ruch z fizycznym sprawdzaniem kolizji
+	var kolizja = move_and_collide(predkosc * delta)
+	
+	if kolizja:
+		var w_co_uderzylismy = kolizja.get_collider()
 		
-		if dystans_do_stacji < promien_kolizji:
-			print("DOKOWANIE UDANE! Wygrywasz!")
-			
-			# Zatrzymujemy rakietę
-			predkosc = Vector2(0, 0)
-			
-			# "Przylepiamy" rakietę do środka stacji dla fajnego efektu
-			position = stacja.position
-			
-			# Wyłączamy dalsze przeliczanie fizyki
-			set_physics_process(false)
+		# Sprawdzamy, czy przeszkoda należy do grupy "planety"
+		if w_co_uderzylismy and w_co_uderzylismy.is_in_group("planety"):
+			print("Rakieta is over party. 💥")
+			# Rakieta wybuchła, więc robimy instant restart poziomu
+			get_tree().reload_current_scene()
+		else:
+			# Jeśli to zwykła bariera, odbijamy się jak wcześniej
+			predkosc = predkosc.bounce(kolizja.get_normal())
+			predkosc *= 0.8
+	
+	# Obrót w kierunku ruchu
+	if predkosc != Vector2.ZERO:
+		rotation = predkosc.angle() + deg_to_rad(90)

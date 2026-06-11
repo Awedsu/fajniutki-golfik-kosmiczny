@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bx2umxb45if76"]
+
+[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="2_06tve"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://rakieta.png" id="2_i3osk"]
+[ext_resource type="Texture2D" uid="uid://dmn4037qe5nkv" path="res://ziemia.png" id="3_i3osk"]
+[ext_resource type="Texture2D" uid="uid://bgdhomf0ob0w7" path="res://finish.png" id="4_02dvo"]
+[ext_resource type="Script" uid="uid://crr7imx027lrf" path="res://stacja.gd" id="5_6nfup"]
+[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="5_xkqyu"]
+[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="6_0u4ol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
+size = Vector2(278.21594, 518.77997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bobpo"]
+size = Vector2(422.30292, 65.86441)
+
+[node name="Gra" type="Node2D" unique_id=1531625699]
+
+[node name="Rakieta" type="Sprite2D" parent="." unique_id=355452473 node_paths=PackedStringArray("planeta")]
+position = Vector2(365.99997, 568)
+scale = Vector2(0.1437729, 0.13107651)
+texture = ExtResource("2_i3osk")
+script = ExtResource("2_06tve")
+planeta = NodePath("../Ziemia")
+
+[node name="Area2D" type="Area2D" parent="Rakieta" unique_id=982527707]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rakieta/Area2D" unique_id=661301554]
+position = Vector2(0, 0.00048828125)
+scale = Vector2(0.99999976, 1)
+shape = SubResource("RectangleShape2D_ko0pw")
+
+[node name="Ziemia" type="Sprite2D" parent="." unique_id=1907805458]
+position = Vector2(115, 125)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_i3osk")
+
+[node name="Stacja" type="Sprite2D" parent="." unique_id=2035406562]
+position = Vector2(382, 26)
+scale = Vector2(0.24626866, 0.44029847)
+texture = ExtResource("4_02dvo")
+script = ExtResource("5_6nfup")
+
+[node name="Area2D" type="Area2D" parent="Stacja" unique_id=294988579]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stacja/Area2D" unique_id=601609000]
+position = Vector2(0, 1.1355934)
+shape = SubResource("RectangleShape2D_bobpo")
+
+[node name="Button" type="Button" parent="." unique_id=1190058024]
+offset_left = 682.0
+offset_top = 47.0
+offset_right = 724.0
+offset_bottom = 80.0
+text = "ZRESETUJ LOT
+"
+script = ExtResource("5_xkqyu")
+
+[node name="PrzyciskMenu" type="Button" parent="." unique_id=157156488]
+offset_left = 674.0
+offset_top = 104.0
+offset_right = 811.0
+offset_bottom = 135.0
+text = "WRÓĆ DO MENU
+"
+script = ExtResource("6_0u4ol")
+
+[connection signal="area_entered" from="Stacja/Area2D" to="Stacja" method="_on_area_2d_area_entered"]
