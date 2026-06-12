@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://fuh1aglfk03e"]
 
-[ext_resource type="Texture2D" uid="uid://bgdhomf0ob0w7" path="res://finish.png" id="1_kdnls"]
+[ext_resource type="Texture2D" uid="uid://bgdhomf0ob0w7" path="res://media/finish.png" id="1_kdnls"]
 [ext_resource type="Script" uid="uid://crr7imx027lrf" path="res://stacja.gd" id="2_8sp78"]
-[ext_resource type="Texture2D" uid="uid://cfr0f1itdw8ue" path="res://confetti.jpg" id="3_8sp78"]
+[ext_resource type="Texture2D" uid="uid://cfr0f1itdw8ue" path="res://media/confetti.jpg" id="3_8sp78"]
 [ext_resource type="Shader" uid="uid://bsfwlnltphcmq" path="res://stacja.gdshader" id="4_qkyg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bobpo"]

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c7r8q6yg6deqn"]
 
-[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://gwiazda.png" id="1_voq76"]
-[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://stacja.tscn" id="2_6285x"]
-[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://planeta.tscn" id="3_eawjj"]
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_voq76"]
+[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_6285x"]
+[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_eawjj"]
 [ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="4_4a838"]
-[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://rakieta.png" id="5_ffhju"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="5_ffhju"]
 [ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="6_lowt3"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="7_1xw0o"]
-[ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://bariera.tscn" id="7_6285x"]
+[ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://sceny/bariera.tscn" id="7_6285x"]
 [ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="8_6wt0a"]
 
 [sub_resource type="Gradient" id="Gradient_bobpo"]
@@ -18,7 +18,7 @@ metadata/_snap_enabled = true
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
 size = Vector2(32.00004, 55.999985)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eawjj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6285x"]
 resource_local_to_scene = true
 size = Vector2(40, 668)
 
@@ -77,7 +77,7 @@ offset_bottom = 648.0
 
 [node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
 position = Vector2(0, 314)
-shape = SubResource("RectangleShape2D_eawjj")
+shape = SubResource("RectangleShape2D_6285x")
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0

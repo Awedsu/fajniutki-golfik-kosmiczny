@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dl20icj623kkn"]
 
-[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://gwiazda.png" id="1_1gkow"]
-[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://stacja.tscn" id="2_sn0ua"]
-[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://planeta.tscn" id="3_fdqdr"]
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_1gkow"]
+[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_sn0ua"]
+[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_fdqdr"]
 [ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="4_4ovoc"]
-[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://rakieta.png" id="5_l4n6x"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="5_l4n6x"]
 [ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="6_emp3x"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="8_rkdyf"]
 [ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="9_j2qyj"]
@@ -94,3 +94,5 @@ offset_bottom = 80.0
 text = "WRÓĆ DO MENU
 "
 script = ExtResource("9_j2qyj")
+
+[node name="punkt_lagrange" type="Node2D" parent="." unique_id=938625000]

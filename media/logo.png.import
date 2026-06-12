@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfr0f1itdw8ue"
-path="res://.godot/imported/confetti.jpg-ecfb54358908395445dc117f728c456d.ctex"
+uid="uid://c1wm20rc0e7r8"
+path="res://.godot/imported/logo.png-48e56c9008f6da3733b177e1807fbba6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://confetti.jpg"
-dest_files=["res://.godot/imported/confetti.jpg-ecfb54358908395445dc117f728c456d.ctex"]
+source_file="res://media/logo.png"
+dest_files=["res://.godot/imported/logo.png-48e56c9008f6da3733b177e1807fbba6.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bx2umxb45if76"]
 
-[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://gwiazda.png" id="1_ko0pw"]
-[ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://bariera.tscn" id="1_ql8au"]
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_ko0pw"]
+[ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://sceny/bariera.tscn" id="1_ql8au"]
 [ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="2_06tve"]
-[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://rakieta.png" id="2_i3osk"]
-[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://planeta.tscn" id="2_ql8au"]
-[ext_resource type="Texture2D" uid="uid://bgdhomf0ob0w7" path="res://finish.png" id="4_02dvo"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="2_i3osk"]
+[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="2_ql8au"]
+[ext_resource type="Texture2D" uid="uid://bgdhomf0ob0w7" path="res://media/finish.png" id="4_02dvo"]
 [ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="4_bobpo"]
 [ext_resource type="Script" uid="uid://crr7imx027lrf" path="res://stacja.gd" id="5_6nfup"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="5_xkqyu"]
@@ -16,11 +16,11 @@ offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql8au"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq4t1"]
 resource_local_to_scene = true
 size = Vector2(830, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_161o8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1681"]
 resource_local_to_scene = true
 size = Vector2(830, 119)
 
@@ -76,7 +76,7 @@ offset_right = 759.0
 
 [node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
 position = Vector2(344, 0)
-shape = SubResource("RectangleShape2D_ql8au")
+shape = SubResource("RectangleShape2D_nq4t1")
 
 [node name="Bariera2" parent="." unique_id=1817562500 instance=ExtResource("1_ql8au")]
 position = Vector2(98, 86)
@@ -89,7 +89,7 @@ offset_bottom = 339.0
 
 [node name="CollisionShape2D" parent="Bariera2" index="1" unique_id=1355329721]
 position = Vector2(434, 279.5)
-shape = SubResource("RectangleShape2D_161o8")
+shape = SubResource("RectangleShape2D_u1681")
 
 [node name="Rakieta" type="CharacterBody2D" parent="." unique_id=165480630]
 position = Vector2(365.99997, 568)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi85jxh0cx87k"
-path="res://.godot/imported/game-background.jpg-15178525833762399c4f82108d4048fb.ctex"
+uid="uid://cfr0f1itdw8ue"
+path="res://.godot/imported/confetti.jpg-12177297a3a1b0105a99aacfd7aea4da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game-background.jpg"
-dest_files=["res://.godot/imported/game-background.jpg-15178525833762399c4f82108d4048fb.ctex"]
+source_file="res://media/confetti.jpg"
+dest_files=["res://.godot/imported/confetti.jpg-12177297a3a1b0105a99aacfd7aea4da.ctex"]
 
 [params]
 

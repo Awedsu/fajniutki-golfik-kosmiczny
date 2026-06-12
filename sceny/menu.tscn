@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://doccqp33b44r3"]
 
-[ext_resource type="Script" uid="uid://c46yibm8483a4" path="res://menu.gd" id="1_lti8b"]
-[ext_resource type="VideoStream" uid="uid://bjjbxtfcu6eqj" path="res://fajniutki.ogv" id="2_4hy44"]
-[ext_resource type="Texture2D" uid="uid://b6ifon43l564o" path="res://cosmo-background.jpg" id="2_ouk20"]
-[ext_resource type="Texture2D" uid="uid://c1wm20rc0e7r8" path="res://logo.png" id="3_mae5d"]
+[ext_resource type="Script" uid="uid://c46yibm8483a4" path="res://menu.gd" id="1_cnv3x"]
+[ext_resource type="Texture2D" uid="uid://b6ifon43l564o" path="res://media/cosmo-background.jpg" id="2_euj8q"]
+[ext_resource type="VideoStream" uid="uid://bjjbxtfcu6eqj" path="res://fajniutki.ogv" id="3_o77l3"]
+[ext_resource type="Texture2D" uid="uid://c1wm20rc0e7r8" path="res://media/logo.png" id="4_1n4ar"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4hy44"]
 blend_mode = 1
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lti8b")
+script = ExtResource("1_cnv3x")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=463352193]
 layout_mode = 1
@@ -28,7 +28,7 @@ offset_right = 136.0
 offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ouk20")
+texture = ExtResource("2_euj8q")
 expand_mode = 1
 stretch_mode = 5
 
@@ -43,7 +43,7 @@ offset_top = 147.0
 offset_right = 188.0
 offset_bottom = 338.0
 grow_horizontal = 2
-stream = ExtResource("2_4hy44")
+stream = ExtResource("3_o77l3")
 autoplay = true
 expand = true
 loop = true
@@ -58,7 +58,7 @@ offset_top = 248.0
 offset_right = 401.0
 offset_bottom = 562.0
 grow_horizontal = 2
-texture = ExtResource("3_mae5d")
+texture = ExtResource("4_1n4ar")
 expand_mode = 1
 stretch_mode = 5
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmn4037qe5nkv"
-path="res://.godot/imported/ziemia.png-0864c0a6f91e9fd5e74e572c69101d5f.ctex"
+uid="uid://b6ifon43l564o"
+path="res://.godot/imported/cosmo-background.jpg-d8a2fb392f9fb671bdce44e2d0a5d085.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ziemia.png"
-dest_files=["res://.godot/imported/ziemia.png-0864c0a6f91e9fd5e74e572c69101d5f.ctex"]
+source_file="res://media/cosmo-background.jpg"
+dest_files=["res://.godot/imported/cosmo-background.jpg-d8a2fb392f9fb671bdce44e2d0a5d085.ctex"]
 
 [params]
 

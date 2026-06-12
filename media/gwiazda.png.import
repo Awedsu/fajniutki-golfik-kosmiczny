@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1wm20rc0e7r8"
-path="res://.godot/imported/logo.png-cca8726399059c8d4f806e28e356b14d.ctex"
+uid="uid://b4nckhlwrv8ff"
+path="res://.godot/imported/gwiazda.png-88aa49b17a724566d11dcd0e761ec3f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://logo.png"
-dest_files=["res://.godot/imported/logo.png-cca8726399059c8d4f806e28e356b14d.ctex"]
+source_file="res://media/gwiazda.png"
+dest_files=["res://.godot/imported/gwiazda.png-88aa49b17a724566d11dcd0e761ec3f1.ctex"]
 
 [params]
 

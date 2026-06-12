@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2tnuurubx3su"
-path="res://.godot/imported/celownik.png-a428882a1d9f4ebf773d26277d453a08.ctex"
+uid="uid://chmrprqq04dnb"
+path="res://.godot/imported/rakieta.png-2105a7dbc35bc73317a9dc910255d16d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://celownik.png"
-dest_files=["res://.godot/imported/celownik.png-a428882a1d9f4ebf773d26277d453a08.ctex"]
+source_file="res://media/rakieta.png"
+dest_files=["res://.godot/imported/rakieta.png-2105a7dbc35bc73317a9dc910255d16d.ctex"]
 
 [params]
 

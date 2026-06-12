@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08a8r"]
 resource_local_to_scene = true
-size = Vector2(463, 40)
+size = Vector2(40, 40)
 
 [node name="Bariera" type="StaticBody2D" unique_id=1945633594]
 script = ExtResource("1_sh0m7")

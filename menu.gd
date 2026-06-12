@@ -1,6 +1,6 @@
 extends Control
 
-const UFO_IMG = preload("res://ufo.png")
+const UFO_IMG = preload("res://media/ufo.png")
 
 func _ready() -> void:
 	# Kiedy menu się załaduje, podpinamy akcje pod kliknięcia (pressed)
