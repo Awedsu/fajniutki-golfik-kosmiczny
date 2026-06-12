@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://cri4iiyy68v7x"]
+[gd_scene format=3 uid="uid://cftcnofp2c380"]
 
-[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_o1hr0"]
-[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_hdvgw"]
-[ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="3_vuf7l"]
-[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="8_ky0yo"]
-[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="9_sjw5i"]
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_2uqwa"]
+[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_rcopp"]
+[ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="3_gap1u"]
+[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="4_aortu"]
+[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="5_wleac"]
 
 [sub_resource type="Gradient" id="Gradient_bobpo"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -25,7 +25,7 @@ color = Color(0.0253638, 0.0253638, 0.025363795, 1)
 z_index = -5
 position = Vector2(640, 360)
 amount = 100
-texture = ExtResource("1_o1hr0")
+texture = ExtResource("1_2uqwa")
 lifetime = 2.5
 preprocess = 1.05
 randomness = 1.0
@@ -38,12 +38,15 @@ color_ramp = SubResource("Gradient_bobpo")
 hue_variation_min = -0.13
 hue_variation_max = 0.09
 
-[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_hdvgw")]
+[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_rcopp")]
 z_index = 6
 position = Vector2(640, 32)
 
-[node name="Rakieta" parent="." unique_id=878764324 instance=ExtResource("3_vuf7l")]
-position = Vector2(640, 672)
+[node name="Rakieta2" parent="." unique_id=878764324 instance=ExtResource("3_gap1u")]
+position = Vector2(1136, 672)
+
+[node name="Rakieta" parent="." unique_id=76077262 instance=ExtResource("3_gap1u")]
+position = Vector2(144, 672)
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0
@@ -52,7 +55,7 @@ offset_right = 1274.0
 offset_bottom = 38.0
 text = "ZRESETUJ LOT
 "
-script = ExtResource("8_ky0yo")
+script = ExtResource("4_aortu")
 
 [node name="PrzyciskMenu" type="Button" parent="." unique_id=157156488]
 offset_left = 1137.0
@@ -61,12 +64,12 @@ offset_right = 1274.0
 offset_bottom = 80.0
 text = "WRÓĆ DO MENU
 "
-script = ExtResource("9_sjw5i")
+script = ExtResource("5_wleac")
 
 [node name="Label" type="Label" parent="." unique_id=1231172914]
 offset_left = 64.0
 offset_top = 320.0
 offset_right = 400.0
 offset_bottom = 464.0
-text = "Aby wystrzelić rakietę, po prostu nakieruj myszką tam, gdzie chcesz aby poleciała, a następnie wciśnij lewy przycisk myszy!"
+text = "W niektórych poziomach może też znajdować się wiele rakiet. Rakiety przenikają przez siebie. Aby ukończyć poziom, wszystkie rakiety muszą dolecieć do Stacji."
 autowrap_mode = 3

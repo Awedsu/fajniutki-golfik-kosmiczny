@@ -60,6 +60,12 @@ size_flags_horizontal = 4
 text = "Tutorial 3
 "
 
+[node name="Tutorial4" type="Button" parent="VBoxContainer" unique_id=600285573]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tutorial 4
+"
+
 [node name="Poziom1" type="Button" parent="VBoxContainer" unique_id=116206990]
 layout_mode = 2
 size_flags_horizontal = 4

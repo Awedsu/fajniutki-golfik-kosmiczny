@@ -5,6 +5,7 @@ func _ready() -> void:
 	$VBoxContainer/Tutorial1.pressed.connect(odpal_poziom.bind("res://poziomy/tut1.tscn"))
 	$VBoxContainer/Tutorial2.pressed.connect(odpal_poziom.bind("res://poziomy/tut2.tscn"))
 	$VBoxContainer/Tutorial3.pressed.connect(odpal_poziom.bind("res://poziomy/tut3.tscn"))
+	$VBoxContainer/Tutorial4.pressed.connect(odpal_poziom.bind("res://poziomy/tut4.tscn"))
 	$VBoxContainer/Poziom1.pressed.connect(odpal_poziom.bind("res://poziomy/poziom_1.tscn"))
 	$VBoxContainer/Poziom2.pressed.connect(odpal_poziom.bind("res://poziomy/poziom_2.tscn"))
 	$VBoxContainer/Poziom3.pressed.connect(odpal_poziom.bind("res://poziomy/poziom_3.tscn"))

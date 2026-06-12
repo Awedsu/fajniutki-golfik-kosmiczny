@@ -2,9 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_spk8j"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_qgs5v"]
-[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="3_n10vv"]
-[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="4_tp87i"]
-[ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="5_r5fvn"]
+[ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="3_rfuop"]
 [ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="6_qgs5v"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="6_tsflk"]
 [ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="7_jpnr5"]
@@ -13,9 +11,6 @@
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
-size = Vector2(32.00004, 55.999985)
 
 [node name="Poziom1" type="Node2D" unique_id=1531625699]
 
@@ -49,18 +44,8 @@ z_index = 6
 position = Vector2(32, 648)
 rotation = 1.5707964
 
-[node name="Rakieta" type="CharacterBody2D" parent="." unique_id=165480630]
+[node name="Rakieta" parent="." unique_id=878764324 instance=ExtResource("3_rfuop")]
 position = Vector2(272, 568)
-script = ExtResource("3_n10vv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rakieta" unique_id=661301554]
-scale = Vector2(0.99999976, 1)
-shape = SubResource("RectangleShape2D_ko0pw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Rakieta" unique_id=1073513313]
-scale = Vector2(0.11721606, 0.10916182)
-texture = ExtResource("4_tp87i")
-script = ExtResource("5_r5fvn")
 
 [node name="Planeta" parent="." unique_id=902311260 instance=ExtResource("6_qgs5v")]
 position = Vector2(640, 332)

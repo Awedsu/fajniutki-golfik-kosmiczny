@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dw307medn2g5h"]
+
+[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="1_mp2y0"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="2_ley87"]
+[ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="3_nygt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
+size = Vector2(32.00004, 55.999985)
+
+[node name="Rakieta" type="CharacterBody2D" unique_id=878764324 groups=["rakiety"]]
+collision_mask = 2
+script = ExtResource("1_mp2y0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1598891908]
+scale = Vector2(0.99999976, 1)
+shape = SubResource("RectangleShape2D_ko0pw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=793910034]
+scale = Vector2(0.11721606, 0.10916182)
+texture = ExtResource("2_ley87")
+script = ExtResource("3_nygt8")

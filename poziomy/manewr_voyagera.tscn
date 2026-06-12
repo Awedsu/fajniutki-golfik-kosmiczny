@@ -3,9 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_grayi"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_6n3y0"]
 [ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_1iijs"]
-[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="4_f1svv"]
-[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="5_6podm"]
-[ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="6_0dps7"]
+[ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_uifym"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="7_bqpsy"]
 [ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="8_o21b2"]
 
@@ -13,9 +11,6 @@
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
-size = Vector2(32.00004, 55.999985)
 
 [node name="manewr_voyagera" type="Node2D" unique_id=1531625699]
 
@@ -51,18 +46,8 @@ position = Vector2(640, 32)
 [node name="Planeta" parent="." unique_id=902311260 instance=ExtResource("3_1iijs")]
 position = Vector2(640, 320)
 
-[node name="Rakieta" type="CharacterBody2D" parent="." unique_id=165480630]
+[node name="Rakieta" parent="." unique_id=878764324 instance=ExtResource("4_uifym")]
 position = Vector2(640, 672)
-script = ExtResource("4_f1svv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rakieta" unique_id=661301554]
-scale = Vector2(0.99999976, 1)
-shape = SubResource("RectangleShape2D_ko0pw")
-
-[node name="Sprite2D" type="Sprite2D" parent="Rakieta" unique_id=1073513313]
-scale = Vector2(0.11721606, 0.10916182)
-texture = ExtResource("5_6podm")
-script = ExtResource("6_0dps7")
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0

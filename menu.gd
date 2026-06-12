@@ -1,53 +1,60 @@
 extends Control
 
 const UFO_IMG = preload("res://media/ufo.png")
+const RAKIETA_IMG = preload("res://media/rakieta.png")
 
 func _ready() -> void:
-	# Kiedy menu się załaduje, podpinamy akcje pod kliknięcia (pressed)
 	$VBoxContainer/Start.pressed.connect(kliknieto_start)
 	$VBoxContainer/Poziomy.pressed.connect(kliknieto_poziomy)
 	$VBoxContainer/Wyjdz.pressed.connect(kliknieto_wyjdz)
 
 func kliknieto_start() -> void:
-	# Odpalamy Twój główny poziom (zmień nazwę pliku, jeśli zapisałeś go inaczej!)
 	get_tree().change_scene_to_file("res://poziomy/poziom_1.tscn")
 
 func kliknieto_poziomy() -> void:
 	get_tree().change_scene_to_file("res://sceny/menu_poziomow.tscn")
 
 func kliknieto_wyjdz() -> void:
-	# Bezpiecznie zamykamy całą grę
 	get_tree().quit()
 
 func _on_ufo_timer_timeout() -> void:
 	if randf() <= 0.067:
-		spawn_ufo()
+		spawn_flying_object()
 
-func spawn_ufo() -> void:
-	print("UFO is sashaying across the screen!")
-	var ufo = Sprite2D.new()
-	ufo.texture = UFO_IMG
-	ufo.scale = Vector2(0.5,0.5)
+func spawn_flying_object() -> void:
+	var flyingObj = Sprite2D.new()
+	if randf() <= 0.2:
+		flyingObj.texture = UFO_IMG
+	else:
+		flyingObj.texture = RAKIETA_IMG
+	flyingObj.scale = Vector2(0.5,0.5)
 	
-	ufo.z_index=100
-	add_child(ufo)
+	flyingObj.z_index=100
+	add_child(flyingObj)
 	
 	var screen_size = get_viewport_rect().size
 	
 	# Losujemy stronę: true = lewa, false = prawa
 	var leci_z_lewej = randi() % 2 == 0
 	
-	# Ustawiamy X w zależności od wylosowanej strony
+	# X w zależności od wylosowanej strony
 	var start_x = -200 if leci_z_lewej else screen_size.x + 200
 	var end_x = screen_size.x + 200 if leci_z_lewej else -200
 	
-	# Losujemy wysokość Y totalnie niezależnie dla startu i mety
+	# Y niezależnie dla startu i mety
 	var start_y = randf_range(100, screen_size.y - 100)
 	var end_y = randf_range(100, screen_size.y - 100)
 	
-	ufo.global_position = Vector2(start_x, start_y)
+	# Jeśli obiekt to rakieta to obracamy tak, aby nie leciała bokiem
+	if flyingObj.texture == RAKIETA_IMG:
+		var start_pos = Vector2(start_x, start_y)
+		var end_pos = Vector2(end_x, end_y)
+		var wektor_kierunku = end_pos - start_pos
+		flyingObj.rotation = wektor_kierunku.angle() + deg_to_rad(90)
+	
+	flyingObj.global_position = Vector2(start_x, start_y)
 	
 	# Płynny lot do nowej pozycji
 	var tween = create_tween()
-	tween.tween_property(ufo, "global_position", Vector2(end_x, end_y), 4.0)
-	tween.tween_callback(ufo.queue_free)
+	tween.tween_property(flyingObj, "global_position", Vector2(end_x, end_y), 4.0)
+	tween.tween_callback(flyingObj.queue_free)

@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://b562ycw6crnlb"]
+[gd_scene format=3 uid="uid://c0466ses1axc3"]
 
-[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_1gkow"]
-[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_sn0ua"]
-[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_fdqdr"]
-[ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_f3fvt"]
-[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="8_rkdyf"]
-[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="9_j2qyj"]
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_tacws"]
+[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_rapm0"]
+[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_6ngi0"]
+[ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_g24ko"]
+[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="5_gej7u"]
+[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="6_u2x2e"]
 
 [sub_resource type="Gradient" id="Gradient_bobpo"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -26,7 +26,7 @@ color = Color(0.0253638, 0.0253638, 0.025363795, 1)
 z_index = -5
 position = Vector2(640, 360)
 amount = 100
-texture = ExtResource("1_1gkow")
+texture = ExtResource("1_tacws")
 lifetime = 2.5
 preprocess = 1.05
 randomness = 1.0
@@ -39,19 +39,18 @@ color_ramp = SubResource("Gradient_bobpo")
 hue_variation_min = -0.13
 hue_variation_max = 0.09
 
-[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_sn0ua")]
+[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_rapm0")]
 z_index = 6
-position = Vector2(1224, 352)
-rotation = 1.5707964
+position = Vector2(640, 47.999996)
 
-[node name="Planeta3" parent="." unique_id=442457102 instance=ExtResource("3_fdqdr")]
-position = Vector2(416, 352)
+[node name="Planeta" parent="." unique_id=902311260 instance=ExtResource("3_6ngi0")]
+position = Vector2(632, 304)
 
-[node name="Planeta4" parent="." unique_id=2089335948 instance=ExtResource("3_fdqdr")]
-position = Vector2(864, 352)
+[node name="Rakieta" parent="." unique_id=878764324 instance=ExtResource("4_g24ko")]
+position = Vector2(440, 660)
 
-[node name="Rakieta" parent="." unique_id=878764324 instance=ExtResource("4_f3fvt")]
-position = Vector2(48, 352)
+[node name="Rakieta2" parent="." unique_id=1499788722 instance=ExtResource("4_g24ko")]
+position = Vector2(968, 660)
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0
@@ -60,7 +59,7 @@ offset_right = 1274.0
 offset_bottom = 38.0
 text = "ZRESETUJ LOT
 "
-script = ExtResource("8_rkdyf")
+script = ExtResource("5_gej7u")
 
 [node name="PrzyciskMenu" type="Button" parent="." unique_id=157156488]
 offset_left = 1137.0
@@ -69,6 +68,6 @@ offset_right = 1274.0
 offset_bottom = 80.0
 text = "WRÓĆ DO MENU
 "
-script = ExtResource("9_j2qyj")
+script = ExtResource("6_u2x2e")
 
 [node name="punkt_lagrange" type="Node2D" parent="." unique_id=938625000]

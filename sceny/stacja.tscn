@@ -81,6 +81,7 @@ script = ExtResource("2_8sp78")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=321327784]
 visible = false
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=909084943]
 position = Vector2(0, 1.1355934)
