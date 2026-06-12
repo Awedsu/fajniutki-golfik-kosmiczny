@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func kliknieto_start() -> void:
 	# Odpalamy Twój główny poziom (zmień nazwę pliku, jeśli zapisałeś go inaczej!)
-	get_tree().change_scene_to_file("res://poziom_1.tscn")
+	get_tree().change_scene_to_file("res://poziomy/poziom_1.tscn")
 
 func kliknieto_poziomy() -> void:
 	# Na razie wyświetlamy tylko tekst w konsoli na dole ekranu
@@ -21,8 +21,7 @@ func kliknieto_wyjdz() -> void:
 	get_tree().quit()
 
 func _on_ufo_timer_timeout() -> void:
-	# randf() losuje ułamek od 0.0 do 1.0. 0.01 to jest dokładnie 1% szansy
-	if randf() <= 0.05:
+	if randf() <= 0.067:
 		spawn_ufo()
 
 func spawn_ufo() -> void:

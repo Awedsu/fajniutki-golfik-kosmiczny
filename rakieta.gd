@@ -8,7 +8,7 @@ var stala_grawitacyjna: float = 7500000.0
 
 var w_locie: bool = false
 var zadokowana: bool = false
-var stala_sily_wystrzalu: float = 1000.0 
+var stala_sily_wystrzalu: float = 500.0 
 
 func _process(_delta: float) -> void:
 	if w_locie or zadokowana: return
@@ -25,7 +25,10 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if not w_locie or zadokowana: return
 	
-# Pobieramy wszystkie planety na mapie z naszej grupy
+	# KLUCZOWY FIX: Reset przyspieszenia co klatke, zeby nie bylo flopa
+	przyspieszenie = Vector2.ZERO
+	
+	# Pobieramy wszystkie planety na mapie z naszej grupy
 	var planety = get_tree().get_nodes_in_group("planety")
 	
 	# Liczymy grawitację dla KAŻDEJ planety z osobna i dodajemy do siebie
@@ -38,7 +41,7 @@ func _physics_process(delta: float) -> void:
 
 	predkosc += przyspieszenie * delta
 	
-# Ruch z fizycznym sprawdzaniem kolizji
+	# Ruch z fizycznym sprawdzaniem kolizji
 	var kolizja = move_and_collide(predkosc * delta)
 	
 	if kolizja:

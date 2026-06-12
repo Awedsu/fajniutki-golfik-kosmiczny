@@ -16,3 +16,4 @@ func _ogarnij_kolizje() -> void:
 		# Mnożymy przez scale, na wypadek gdybyś jednak bawił się narzędziem skalowania
 		kolizja.shape.size = rect.size * rect.scale
 		kolizja.position = rect.position + (kolizja.shape.size / 2.0)
+		kolizja.rotation = rect.rotation

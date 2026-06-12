@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c7r8q6yg6deqn"]
+
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://gwiazda.png" id="1_voq76"]
+[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://stacja.tscn" id="2_6285x"]
+[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://planeta.tscn" id="3_eawjj"]
+[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="4_4a838"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://rakieta.png" id="5_ffhju"]
+[ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="6_lowt3"]
+[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="7_1xw0o"]
+[ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://bariera.tscn" id="7_6285x"]
+[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="8_6wt0a"]
+
+[sub_resource type="Gradient" id="Gradient_bobpo"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
+size = Vector2(32.00004, 55.999985)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eawjj"]
+resource_local_to_scene = true
+size = Vector2(40, 668)
+
+[node name="Poziom1" type="Node2D" unique_id=1531625699]
+
+[node name="Tlo" type="ColorRect" parent="." unique_id=1501720601]
+z_index = -10
+offset_left = -40.0
+offset_top = -24.0
+offset_right = 1328.0
+offset_bottom = 785.0
+color = Color(0.0253638, 0.0253638, 0.025363795, 1)
+
+[node name="Gwiazdy" type="CPUParticles2D" parent="." unique_id=431260719]
+z_index = -5
+position = Vector2(640, 360)
+amount = 100
+texture = ExtResource("1_voq76")
+lifetime = 2.5
+preprocess = 1.05
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 360)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.15
+color_ramp = SubResource("Gradient_bobpo")
+hue_variation_min = -0.13
+hue_variation_max = 0.09
+
+[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_6285x")]
+z_index = 6
+position = Vector2(1016, 656)
+
+[node name="Planeta" parent="." unique_id=902311260 instance=ExtResource("3_eawjj")]
+position = Vector2(640, 320)
+
+[node name="Rakieta" type="CharacterBody2D" parent="." unique_id=165480630]
+position = Vector2(320, 672)
+script = ExtResource("4_4a838")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rakieta" unique_id=661301554]
+scale = Vector2(0.99999976, 1)
+shape = SubResource("RectangleShape2D_ko0pw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rakieta" unique_id=1073513313]
+scale = Vector2(0.11721606, 0.10916182)
+texture = ExtResource("5_ffhju")
+script = ExtResource("6_lowt3")
+
+[node name="Bariera" parent="." unique_id=1945633594 instance=ExtResource("7_6285x")]
+position = Vector2(640, 416)
+
+[node name="ColorRect" parent="Bariera" index="0" unique_id=36201560]
+offset_bottom = 648.0
+
+[node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
+position = Vector2(0, 314)
+shape = SubResource("RectangleShape2D_eawjj")
+
+[node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
+offset_left = 1159.0
+offset_top = 5.0
+offset_right = 1274.0
+offset_bottom = 38.0
+text = "ZRESETUJ LOT
+"
+script = ExtResource("7_1xw0o")
+
+[node name="PrzyciskMenu" type="Button" parent="." unique_id=157156488]
+offset_left = 1137.0
+offset_top = 49.0
+offset_right = 1274.0
+offset_bottom = 80.0
+text = "WRÓĆ DO MENU
+"
+script = ExtResource("8_6wt0a")
+
+[editable path="Bariera"]

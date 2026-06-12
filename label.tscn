@@ -16,9 +16,13 @@ offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql8au"]
+resource_local_to_scene = true
+size = Vector2(830, 40)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_161o8"]
 resource_local_to_scene = true
-size = Vector2(779, 40)
+size = Vector2(830, 119)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
 size = Vector2(278.21594, 518.77997)
@@ -67,10 +71,24 @@ position = Vector2(934, 67)
 position = Vector2(98, 86)
 
 [node name="ColorRect" parent="Bariera" index="0" unique_id=36201560]
+offset_left = -71.0
 offset_right = 759.0
 
 [node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
-position = Vector2(369.5, 0)
+position = Vector2(344, 0)
+shape = SubResource("RectangleShape2D_ql8au")
+
+[node name="Bariera2" parent="." unique_id=1817562500 instance=ExtResource("1_ql8au")]
+position = Vector2(98, 86)
+
+[node name="ColorRect" parent="Bariera2" index="0" unique_id=36201560]
+offset_left = 19.0
+offset_top = 220.0
+offset_right = 849.0
+offset_bottom = 339.0
+
+[node name="CollisionShape2D" parent="Bariera2" index="1" unique_id=1355329721]
+position = Vector2(434, 279.5)
 shape = SubResource("RectangleShape2D_161o8")
 
 [node name="Rakieta" type="CharacterBody2D" parent="." unique_id=165480630]
@@ -121,3 +139,4 @@ script = ExtResource("6_0u4ol")
 [connection signal="body_entered" from="Stacja/Area2D" to="Stacja" method="_on_area_2d_body_entered"]
 
 [editable path="Bariera"]
+[editable path="Bariera2"]
