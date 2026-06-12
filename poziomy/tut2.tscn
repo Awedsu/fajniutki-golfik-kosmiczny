@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://de8d1i37vcbr0"]
+
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_s6j5e"]
+[ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://sceny/bariera.tscn" id="2_2tklf"]
+[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_3twnf"]
+[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="3_2tklf"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="4_i845u"]
+[ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="5_5lvw4"]
+[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="6_5etui"]
+[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="7_lg37k"]
+
+[sub_resource type="Gradient" id="Gradient_bobpo"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i845u"]
+resource_local_to_scene = true
+size = Vector2(1252, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lvw4"]
+resource_local_to_scene = true
+size = Vector2(1252, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko0pw"]
+size = Vector2(32.00004, 55.999985)
+
+[node name="Poziom1" type="Node2D" unique_id=1531625699]
+
+[node name="Tlo" type="ColorRect" parent="." unique_id=1501720601]
+z_index = -10
+offset_left = -40.0
+offset_top = -24.0
+offset_right = 1328.0
+offset_bottom = 785.0
+color = Color(0.0253638, 0.0253638, 0.025363795, 1)
+
+[node name="Gwiazdy" type="CPUParticles2D" parent="." unique_id=431260719]
+z_index = -5
+position = Vector2(640, 360)
+amount = 100
+texture = ExtResource("1_s6j5e")
+lifetime = 2.5
+preprocess = 1.05
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(640, 360)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.01
+scale_amount_max = 0.15
+color_ramp = SubResource("Gradient_bobpo")
+hue_variation_min = -0.13
+hue_variation_max = 0.09
+
+[node name="Bariera" parent="." unique_id=1945633594 instance=ExtResource("2_2tklf")]
+position = Vector2(32, 288)
+
+[node name="ColorRect" parent="Bariera" index="0" unique_id=36201560]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 1236.0
+offset_bottom = 16.0
+
+[node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
+position = Vector2(610, -4)
+shape = SubResource("RectangleShape2D_i845u")
+
+[node name="Bariera2" parent="." unique_id=1245392746 instance=ExtResource("2_2tklf")]
+position = Vector2(32, 288)
+
+[node name="ColorRect" parent="Bariera2" index="0" unique_id=36201560]
+offset_left = -16.0
+offset_top = 160.0
+offset_right = 1236.0
+offset_bottom = 200.0
+
+[node name="CollisionShape2D" parent="Bariera2" index="1" unique_id=1355329721]
+position = Vector2(610, 180)
+shape = SubResource("RectangleShape2D_5lvw4")
+
+[node name="Label" type="Label" parent="." unique_id=1890997376]
+offset_left = 472.0
+offset_top = 104.0
+offset_right = 808.0
+offset_bottom = 248.0
+text = "W niektórych poziomach znajdują się bariery. Rakieta może się od nich odbijać, ale kosztem części swojej prędkości."
+autowrap_mode = 3
+
+[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_3twnf")]
+z_index = 6
+position = Vector2(1224, 376)
+rotation = 1.5707964
+
+[node name="Rakieta" type="CharacterBody2D" parent="." unique_id=165480630]
+position = Vector2(48, 376)
+script = ExtResource("3_2tklf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rakieta" unique_id=661301554]
+scale = Vector2(0.99999976, 1)
+shape = SubResource("RectangleShape2D_ko0pw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rakieta" unique_id=1073513313]
+scale = Vector2(0.11721606, 0.10916182)
+texture = ExtResource("4_i845u")
+script = ExtResource("5_5lvw4")
+
+[node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
+offset_left = 1159.0
+offset_top = 5.0
+offset_right = 1274.0
+offset_bottom = 38.0
+text = "ZRESETUJ LOT
+"
+script = ExtResource("6_5etui")
+
+[node name="PrzyciskMenu" type="Button" parent="." unique_id=157156488]
+offset_left = 1137.0
+offset_top = 49.0
+offset_right = 1274.0
+offset_bottom = 80.0
+text = "WRÓĆ DO MENU
+"
+script = ExtResource("7_lg37k")
+
+[editable path="Bariera"]
+[editable path="Bariera2"]

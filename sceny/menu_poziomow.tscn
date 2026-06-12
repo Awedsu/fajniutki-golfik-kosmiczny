@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://wuttamgca86e"]
+
+[ext_resource type="Script" uid="uid://cffmkx7nxyunk" path="res://sceny/menu_poziomow.gd" id="1_ojbqh"]
+[ext_resource type="Texture2D" uid="uid://b6ifon43l564o" path="res://media/cosmo-background.jpg" id="2_0vgnr"]
+
+[node name="MenuPoziomow" type="Control" unique_id=1815539354]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_ojbqh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1821272632]
+z_index = -20
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -120.0
+offset_right = 136.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_0vgnr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2034138413]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -20.0
+offset_right = 39.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tutorial1" type="Button" parent="VBoxContainer" unique_id=2101496400]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tutorial 1
+"
+
+[node name="Tutorial2" type="Button" parent="VBoxContainer" unique_id=73826162]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tutorial 2
+"
+
+[node name="Tutorial3" type="Button" parent="VBoxContainer" unique_id=1105522319]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tutorial 3
+"
+
+[node name="Poziom1" type="Button" parent="VBoxContainer" unique_id=116206990]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Poziom 1
+"
+
+[node name="Poziom2" type="Button" parent="VBoxContainer" unique_id=597003437]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Poziom 2"
+
+[node name="Poziom3" type="Button" parent="VBoxContainer" unique_id=906680435]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Poziom 3"
+
+[node name="ManewrVoyagera" type="Button" parent="VBoxContainer" unique_id=113112394]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Manewr Voyagera"
+
+[node name="PunktLangrangea" type="Button" parent="VBoxContainer" unique_id=1571334911]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Punkt Langrange'a"
+
+[node name="Wroc" type="Button" parent="VBoxContainer" unique_id=256551228]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Wróć do menu głównego
+"

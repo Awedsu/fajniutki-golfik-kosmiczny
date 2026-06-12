@@ -1,13 +1,12 @@
-[gd_scene format=3 uid="uid://b562ycw6crnlb"]
+[gd_scene format=3 uid="uid://cri4iiyy68v7x"]
 
-[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_1gkow"]
-[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_sn0ua"]
-[ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_fdqdr"]
-[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="4_4ovoc"]
-[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="5_l4n6x"]
-[ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="6_emp3x"]
-[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="8_rkdyf"]
-[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="9_j2qyj"]
+[ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_o1hr0"]
+[ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_hdvgw"]
+[ext_resource type="Script" uid="uid://b85wpd2vv3q31" path="res://rakieta.gd" id="4_snih3"]
+[ext_resource type="Texture2D" uid="uid://chmrprqq04dnb" path="res://media/rakieta.png" id="5_ki61g"]
+[ext_resource type="Script" uid="uid://rp0yarrq0osj" path="res://sprite_2d.gd" id="6_q7lug"]
+[ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="8_ky0yo"]
+[ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="9_sjw5i"]
 
 [sub_resource type="Gradient" id="Gradient_bobpo"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -31,7 +30,7 @@ color = Color(0.0253638, 0.0253638, 0.025363795, 1)
 z_index = -5
 position = Vector2(640, 360)
 amount = 100
-texture = ExtResource("1_1gkow")
+texture = ExtResource("1_o1hr0")
 lifetime = 2.5
 preprocess = 1.05
 randomness = 1.0
@@ -44,20 +43,13 @@ color_ramp = SubResource("Gradient_bobpo")
 hue_variation_min = -0.13
 hue_variation_max = 0.09
 
-[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_sn0ua")]
+[node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_hdvgw")]
 z_index = 6
-position = Vector2(1224, 352)
-rotation = 1.5707964
-
-[node name="Planeta3" parent="." unique_id=442457102 instance=ExtResource("3_fdqdr")]
-position = Vector2(416, 352)
-
-[node name="Planeta4" parent="." unique_id=2089335948 instance=ExtResource("3_fdqdr")]
-position = Vector2(864, 352)
+position = Vector2(640, 32)
 
 [node name="Rakieta" type="CharacterBody2D" parent="." unique_id=165480630]
-position = Vector2(40, 352)
-script = ExtResource("4_4ovoc")
+position = Vector2(640, 672)
+script = ExtResource("4_snih3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rakieta" unique_id=661301554]
 scale = Vector2(0.99999976, 1)
@@ -65,8 +57,8 @@ shape = SubResource("RectangleShape2D_ko0pw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rakieta" unique_id=1073513313]
 scale = Vector2(0.11721606, 0.10916182)
-texture = ExtResource("5_l4n6x")
-script = ExtResource("6_emp3x")
+texture = ExtResource("5_ki61g")
+script = ExtResource("6_q7lug")
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0
@@ -75,7 +67,7 @@ offset_right = 1274.0
 offset_bottom = 38.0
 text = "ZRESETUJ LOT
 "
-script = ExtResource("8_rkdyf")
+script = ExtResource("8_ky0yo")
 
 [node name="PrzyciskMenu" type="Button" parent="." unique_id=157156488]
 offset_left = 1137.0
@@ -84,6 +76,12 @@ offset_right = 1274.0
 offset_bottom = 80.0
 text = "WRÓĆ DO MENU
 "
-script = ExtResource("9_j2qyj")
+script = ExtResource("9_sjw5i")
 
-[node name="punkt_lagrange" type="Node2D" parent="." unique_id=938625000]
+[node name="Label" type="Label" parent="." unique_id=1231172914]
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 400.0
+offset_bottom = 464.0
+text = "Aby wystrzelić rakietę, po prostu nakieruj myszką tam, gdzie chcesz aby poleciała, a następnie wciśnij lewy przycisk myszy!"
+autowrap_mode = 3

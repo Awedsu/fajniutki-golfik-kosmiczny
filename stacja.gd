@@ -12,6 +12,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 		# Odpalamy confetti
 		if has_node("Confetti"):
+			$Confetti.global_rotation = 0.0
 			$Confetti.emitting = true
 			
 	# Pokazujemy cala ramke z tekstem

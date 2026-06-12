@@ -13,8 +13,7 @@ func kliknieto_start() -> void:
 	get_tree().change_scene_to_file("res://poziomy/poziom_1.tscn")
 
 func kliknieto_poziomy() -> void:
-	# Na razie wyświetlamy tylko tekst w konsoli na dole ekranu
-	print("Ekran poziomów jest jeszcze w budowie!")
+	get_tree().change_scene_to_file("res://sceny/menu_poziomow.tscn")
 
 func kliknieto_wyjdz() -> void:
 	# Bezpiecznie zamykamy całą grę
