@@ -8,30 +8,77 @@ var stala_grawitacyjna: float = 7500000.0
 
 var w_locie: bool = false
 var zadokowana: bool = false
+
+# --- USTAWIENIA STRZAŁU ---
+@export var uzywaj_procy: bool = false # <--- ZAZNACZ TO W INSPEKTORZE DLA STUDNI GRAWITACYJNEJ!
 var stala_sily_wystrzalu: float = 500.0 
 
-func _process(_delta: float) -> void:
+# --- ZMIENNE PROCY ---
+var laduje_energie: bool = false
+var aktualna_sila: float = 0.0
+var maksymalna_sila: float = 2000.0 
+var szybkosc_ladowania: float = 1500.0 
+
+# Pobieramy pasek energii (dodaj węzeł ProgressBar do Rakiety i nazwij go "ProgressBar")
+@onready var pasek_energii = $ProgressBar 
+
+func _ready() -> void:
+	# Ukrywamy pasek na starcie
+	if pasek_energii:
+		pasek_energii.max_value = maksymalna_sila
+		pasek_energii.value = 0
+		pasek_energii.hide()
+
+func _process(delta: float) -> void:
 	if w_locie or zadokowana: return
+	
 	look_at(get_global_mouse_position())
 	rotation += deg_to_rad(90)
+	
+	# Ładowanie paska (działa tylko, gdy tryb procy jest włączony)
+	if uzywaj_procy and laduje_energie:
+		aktualna_sila += szybkosc_ladowania * delta
+		if aktualna_sila > maksymalna_sila:
+			aktualna_sila = maksymalna_sila
+		
+		if pasek_energii:
+			pasek_energii.value = aktualna_sila
 
 func _input(event: InputEvent) -> void:
 	if w_locie or zadokowana: return
 	
-	if event is InputEventMouseButton and not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		predkosc = (get_global_mouse_position() - global_position).normalized() * stala_sily_wystrzalu
-		w_locie = true
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		# --- TRYB 1: Z PROCĄ ---
+		if uzywaj_procy:
+			if event.pressed:
+				# Wciśnięcie: Zaczynamy ładować energię
+				laduje_energie = true
+				aktualna_sila = 0.0
+				if pasek_energii:
+					pasek_energii.show()
+			else:
+				# Puszczenie: Wystrzał z naładowaną siłą
+				laduje_energie = false
+				predkosc = (get_global_mouse_position() - global_position).normalized() * aktualna_sila
+				w_locie = true
+				if pasek_energii:
+					pasek_energii.hide()
+		
+		# --- TRYB 2: STANDARDOWY ---
+		else:
+			if not event.pressed:
+				# Zwykłe kliknięcie = natychmiastowy strzał
+				predkosc = (get_global_mouse_position() - global_position).normalized() * stala_sily_wystrzalu
+				w_locie = true
 
 func _physics_process(delta: float) -> void:
 	if not w_locie or zadokowana: return
 	
-	# KLUCZOWY FIX: Reset przyspieszenia co klatke, zeby nie bylo flopa
+	# KLUCZOWY FIX: Reset przyspieszenia co klatke
 	przyspieszenie = Vector2.ZERO
 	
-	# Pobieramy wszystkie planety na mapie z naszej grupy
 	var planety = get_tree().get_nodes_in_group("planety")
 	
-	# Liczymy grawitację dla KAŻDEJ planety z osobna i dodajemy do siebie
 	for p in planety:
 		var wektor_odleglosci = p.global_position - global_position
 		var r_kwadrat = max(wektor_odleglosci.length_squared(), 1000.0) 
@@ -41,22 +88,17 @@ func _physics_process(delta: float) -> void:
 
 	predkosc += przyspieszenie * delta
 	
-	# Ruch z fizycznym sprawdzaniem kolizji
 	var kolizja = move_and_collide(predkosc * delta)
 	
 	if kolizja:
 		var w_co_uderzylismy = kolizja.get_collider()
 		
-		# Sprawdzamy, czy przeszkoda należy do grupy "planety"
 		if w_co_uderzylismy and w_co_uderzylismy.is_in_group("planety"):
 			print("Rakieta is over party. 💥")
-			# Rakieta wybuchła, więc robimy instant restart poziomu
 			get_tree().reload_current_scene()
 		else:
-			# Jeśli to zwykła bariera, odbijamy się jak wcześniej
 			predkosc = predkosc.bounce(kolizja.get_normal())
 			predkosc *= 0.8
 	
-	# Obrót w kierunku ruchu
 	if predkosc != Vector2.ZERO:
 		rotation = predkosc.angle() + deg_to_rad(90)

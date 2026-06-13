@@ -133,6 +133,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Punkt Langrange'a"
 
+[node name="StudniaGrawitacyjna" type="Button" parent="Kolumny/Zjawiska" unique_id=724757929]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Studnia grawitacyjna
+"
+
+[node name="PulapkaGestosci" type="Button" parent="Kolumny/Zjawiska" unique_id=2108581036]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pułapka gęstości"
+
 [node name="Wroc" type="Button" parent="." unique_id=256551228]
 layout_mode = 1
 anchors_preset = 13

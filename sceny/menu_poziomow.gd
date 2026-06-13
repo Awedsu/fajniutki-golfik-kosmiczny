@@ -14,6 +14,8 @@ func _ready() -> void:
 	
 	$Kolumny/Zjawiska/ManewrVoyagera.pressed.connect(odpal_poziom.bind("res://poziomy/manewr_voyagera.tscn"))
 	$Kolumny/Zjawiska/PunktLangrangea.pressed.connect(odpal_poziom.bind("res://poziomy/punkt_lagrange.tscn"))
+	$Kolumny/Zjawiska/PulapkaGestosci.pressed.connect(odpal_poziom.bind("res://poziomy/pulapka_gestosci.tscn"))
+	$Kolumny/Zjawiska/StudniaGrawitacyjna.pressed.connect(odpal_poziom.bind("res://poziomy/studnia_grawitacyjna.tscn"))
 	
 	$Wroc.pressed.connect(wroc_do_menu)
 
