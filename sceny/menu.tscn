@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ifon43l564o" path="res://media/cosmo-background.jpg" id="2_euj8q"]
 [ext_resource type="VideoStream" uid="uid://bjjbxtfcu6eqj" path="res://fajniutki.ogv" id="3_o77l3"]
 [ext_resource type="Texture2D" uid="uid://c1wm20rc0e7r8" path="res://media/logo.png" id="4_1n4ar"]
+[ext_resource type="Texture2D" uid="uid://d3oadictvhoyy" path="res://bystrosc.png" id="5_euj8q"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4hy44"]
 blend_mode = 1
@@ -32,7 +33,7 @@ texture = ExtResource("2_euj8q")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="TextureRect" unique_id=17818349]
+[node name="Fajniutki" type="VideoStreamPlayer" parent="TextureRect" unique_id=17818349]
 material = SubResource("CanvasItemMaterial_4hy44")
 layout_mode = 1
 anchors_preset = 5
@@ -48,7 +49,7 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1712559897]
+[node name="KosmycznyGolf" type="TextureRect" parent="TextureRect" unique_id=1712559897]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -61,6 +62,16 @@ grow_horizontal = 2
 texture = ExtResource("4_1n4ar")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Bystrosc" type="TextureRect" parent="." unique_id=1043015053]
+z_index = 10
+layout_mode = 0
+offset_left = 528.0
+offset_top = 320.0
+offset_right = 5931.0
+offset_bottom = 1574.0
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("5_euj8q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1003114796]
 layout_mode = 1
