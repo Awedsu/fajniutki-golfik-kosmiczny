@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_1gkow"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_sn0ua"]
 [ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_fdqdr"]
+[ext_resource type="PackedScene" uid="uid://dl20icj623kkn" path="res://poziomy/poziom_3.tscn" id="3_nfpef"]
 [ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_f3fvt"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="8_rkdyf"]
 [ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="9_j2qyj"]
@@ -43,6 +44,7 @@ hue_variation_max = 0.09
 z_index = 6
 position = Vector2(1224, 352)
 rotation = 1.5707964
+nastepny_poziom = ExtResource("3_nfpef")
 
 [node name="Planeta3" parent="." unique_id=442457102 instance=ExtResource("3_fdqdr")]
 position = Vector2(416, 352)

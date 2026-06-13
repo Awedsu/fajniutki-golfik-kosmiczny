@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_o1hr0"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_hdvgw"]
+[ext_resource type="PackedScene" uid="uid://de8d1i37vcbr0" path="res://poziomy/tut2.tscn" id="3_7ix4x"]
 [ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="3_vuf7l"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="8_ky0yo"]
 [ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="9_sjw5i"]
@@ -11,7 +12,7 @@ offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
 
-[node name="Poziom1" type="Node2D" unique_id=1531625699]
+[node name="Tutorial1" type="Node2D" unique_id=1531625699]
 
 [node name="Tlo" type="ColorRect" parent="." unique_id=1501720601]
 z_index = -10
@@ -41,6 +42,7 @@ hue_variation_max = 0.09
 [node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_hdvgw")]
 z_index = 6
 position = Vector2(640, 32)
+nastepny_poziom = ExtResource("3_7ix4x")
 
 [node name="Rakieta" parent="." unique_id=878764324 instance=ExtResource("3_vuf7l")]
 position = Vector2(640, 672)

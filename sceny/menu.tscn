@@ -70,23 +70,31 @@ anchor_top = 0.711
 anchor_right = 0.5
 anchor_bottom = 0.711
 offset_left = -202.0
-offset_top = -143.92001
+offset_top = -127.92001
 offset_right = 203.0
-offset_bottom = -38.920013
+offset_bottom = 43.079987
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=1481254286]
+[node name="Tutorial" type="Button" parent="VBoxContainer" unique_id=1481254286]
 layout_mode = 2
-text = "START"
+text = "TUTORIAL"
 
-[node name="Poziomy" type="Button" parent="VBoxContainer" unique_id=1014349373]
+[node name="Poziomy" type="Button" parent="VBoxContainer" unique_id=1368336658]
 layout_mode = 2
-text = "POZIOMY"
+text = "ZAGRAJ "
+
+[node name="Zjawiska" type="Button" parent="VBoxContainer" unique_id=201205664]
+layout_mode = 2
+text = "ZJAWISKA FIZYCZNE"
+
+[node name="ListaPoziomow" type="Button" parent="VBoxContainer" unique_id=1014349373]
+layout_mode = 2
+text = "LISTA WSZYSTKICH POZIOMÓW"
 
 [node name="Wyjdz" type="Button" parent="VBoxContainer" unique_id=1504825363]
 layout_mode = 2
-text = "WYJDŹ
+text = "WYJDŹ Z GRY
 "
 
 [node name="UfoTimer" type="Timer" parent="." unique_id=1939367193]

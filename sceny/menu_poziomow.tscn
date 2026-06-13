@@ -27,73 +27,124 @@ texture = ExtResource("2_0vgnr")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2034138413]
-z_index = 10
+[node name="Kolumny" type="HBoxContainer" parent="." unique_id=2131932685]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.5
+offset_left = -448.0
 offset_top = -20.0
-offset_right = 39.5
+offset_right = 448.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
-[node name="Tutorial1" type="Button" parent="VBoxContainer" unique_id=2101496400]
+[node name="Tutoriale" type="VBoxContainer" parent="Kolumny" unique_id=2034138413]
+z_index = 10
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Tutoriale" type="Label" parent="Kolumny/Tutoriale" unique_id=948878128]
+layout_mode = 2
+text = "Tutoriale"
+horizontal_alignment = 1
+
+[node name="Tutorial1" type="Button" parent="Kolumny/Tutoriale" unique_id=2101496400]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Tutorial 1
 "
 
-[node name="Tutorial2" type="Button" parent="VBoxContainer" unique_id=73826162]
+[node name="Tutorial2" type="Button" parent="Kolumny/Tutoriale" unique_id=73826162]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Tutorial 2
 "
 
-[node name="Tutorial3" type="Button" parent="VBoxContainer" unique_id=1105522319]
+[node name="Tutorial3" type="Button" parent="Kolumny/Tutoriale" unique_id=1105522319]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Tutorial 3
 "
 
-[node name="Tutorial4" type="Button" parent="VBoxContainer" unique_id=600285573]
+[node name="Tutorial4" type="Button" parent="Kolumny/Tutoriale" unique_id=600285573]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Tutorial 4
 "
 
-[node name="Poziom1" type="Button" parent="VBoxContainer" unique_id=116206990]
+[node name="Poziomy" type="VBoxContainer" parent="Kolumny" unique_id=2041310086]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Poziomy" type="Label" parent="Kolumny/Poziomy" unique_id=150495758]
+layout_mode = 2
+text = "Poziomy Główne"
+horizontal_alignment = 1
+
+[node name="Poziom1" type="Button" parent="Kolumny/Poziomy" unique_id=116206990]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Poziom 1
 "
 
-[node name="Poziom2" type="Button" parent="VBoxContainer" unique_id=597003437]
+[node name="Poziom2" type="Button" parent="Kolumny/Poziomy" unique_id=597003437]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Poziom 2"
 
-[node name="Poziom3" type="Button" parent="VBoxContainer" unique_id=906680435]
+[node name="Poziom3" type="Button" parent="Kolumny/Poziomy" unique_id=906680435]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Poziom 3"
 
-[node name="ManewrVoyagera" type="Button" parent="VBoxContainer" unique_id=113112394]
+[node name="Poziom4" type="Button" parent="Kolumny/Poziomy" unique_id=724108537]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Poziom 4"
+
+[node name="Poziom5" type="Button" parent="Kolumny/Poziomy" unique_id=358586593]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Poziom 5"
+
+[node name="Zjawiska" type="VBoxContainer" parent="Kolumny" unique_id=2054481021]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Zjawiska Fizyczne" type="Label" parent="Kolumny/Zjawiska" unique_id=1360286145]
+layout_mode = 2
+text = "Zjawiska Fizyczne"
+horizontal_alignment = 1
+
+[node name="ManewrVoyagera" type="Button" parent="Kolumny/Zjawiska" unique_id=113112394]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Manewr Voyagera"
 
-[node name="PunktLangrangea" type="Button" parent="VBoxContainer" unique_id=1571334911]
+[node name="PunktLangrangea" type="Button" parent="Kolumny/Zjawiska" unique_id=1571334911]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Punkt Langrange'a"
 
-[node name="Wroc" type="Button" parent="VBoxContainer" unique_id=256551228]
-layout_mode = 2
+[node name="Wroc" type="Button" parent="." unique_id=256551228]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.5
+offset_top = 576.0
+offset_right = 99.5
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 text = "Wróć do menu głównego
 "

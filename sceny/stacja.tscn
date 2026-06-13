@@ -110,6 +110,36 @@ color_ramp = SubResource("Gradient_kdnls")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=617403749]
 
+[node name="PrzyciskNastepny" type="Button" parent="CanvasLayer" unique_id=1305229147]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -184.0
+offset_right = 71.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Następny Poziom"
+
+[node name="PrzyciskMenu" type="Button" parent="CanvasLayer" unique_id=804123165]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -184.0
+offset_right = 60.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Wróć do menu głównego"
+
 [node name="Ramka" type="PanelContainer" parent="CanvasLayer" unique_id=314622365]
 visible = false
 anchors_preset = 8

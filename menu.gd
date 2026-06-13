@@ -4,14 +4,22 @@ const UFO_IMG = preload("res://media/ufo.png")
 const RAKIETA_IMG = preload("res://media/rakieta.png")
 
 func _ready() -> void:
-	$VBoxContainer/Start.pressed.connect(kliknieto_start)
+	$VBoxContainer/Tutorial.pressed.connect(kliknieto_tutorial)
 	$VBoxContainer/Poziomy.pressed.connect(kliknieto_poziomy)
+	$VBoxContainer/Zjawiska.pressed.connect(kliknieto_zjawiska)
+	$VBoxContainer/ListaPoziomow.pressed.connect(kliknieto_lista)
 	$VBoxContainer/Wyjdz.pressed.connect(kliknieto_wyjdz)
 
-func kliknieto_start() -> void:
-	get_tree().change_scene_to_file("res://poziomy/poziom_1.tscn")
+func kliknieto_tutorial() -> void:
+	get_tree().change_scene_to_file("res://poziomy/tut1.tscn")
 
 func kliknieto_poziomy() -> void:
+	get_tree().change_scene_to_file("res://poziomy/poziom_1.tscn")
+
+func kliknieto_zjawiska() -> void:
+	get_tree().change_scene_to_file("res://poziomy/manewr_voyagera.tscn")
+	
+func kliknieto_lista() -> void:
 	get_tree().change_scene_to_file("res://sceny/menu_poziomow.tscn")
 
 func kliknieto_wyjdz() -> void:

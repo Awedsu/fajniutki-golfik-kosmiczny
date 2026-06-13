@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_s6j5e"]
 [ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://sceny/bariera.tscn" id="2_2tklf"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_3twnf"]
+[ext_resource type="PackedScene" uid="uid://bsqbsb3h2njbr" path="res://poziomy/tut3.tscn" id="4_s6j5e"]
 [ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_tm4np"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="6_5etui"]
 [ext_resource type="Script" uid="uid://c7wdway4oo4jl" path="res://przycisk_menu.gd" id="7_lg37k"]
@@ -12,11 +13,11 @@ offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i845u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3twnf"]
 resource_local_to_scene = true
 size = Vector2(1252, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lvw4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tklf"]
 resource_local_to_scene = true
 size = Vector2(1252, 40)
 
@@ -58,7 +59,7 @@ offset_bottom = 16.0
 
 [node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
 position = Vector2(610, -4)
-shape = SubResource("RectangleShape2D_i845u")
+shape = SubResource("RectangleShape2D_3twnf")
 
 [node name="Bariera2" parent="." unique_id=1245392746 instance=ExtResource("2_2tklf")]
 position = Vector2(32, 288)
@@ -71,7 +72,7 @@ offset_bottom = 200.0
 
 [node name="CollisionShape2D" parent="Bariera2" index="1" unique_id=1355329721]
 position = Vector2(610, 180)
-shape = SubResource("RectangleShape2D_5lvw4")
+shape = SubResource("RectangleShape2D_2tklf")
 
 [node name="Label" type="Label" parent="." unique_id=1890997376]
 offset_left = 472.0
@@ -85,8 +86,9 @@ autowrap_mode = 3
 z_index = 6
 position = Vector2(1224, 376)
 rotation = 1.5707964
+nastepny_poziom = ExtResource("4_s6j5e")
 
-[node name="Rakieta2" parent="." unique_id=878764324 instance=ExtResource("4_tm4np")]
+[node name="Rakieta" parent="." unique_id=878764324 instance=ExtResource("4_tm4np")]
 position = Vector2(48, 376)
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
