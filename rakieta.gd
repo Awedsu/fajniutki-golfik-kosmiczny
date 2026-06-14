@@ -9,17 +9,17 @@ var stala_grawitacyjna: float = 7500000.0
 var w_locie: bool = false
 var zadokowana: bool = false
 
-# --- USTAWIENIA STRZAŁU ---
-@export var uzywaj_procy: bool = false # <--- ZAZNACZ TO W INSPEKTORZE DLA STUDNI GRAWITACYJNEJ!
+# USTAWIENIA STRZAŁU 
+@export var uzywaj_procy: bool = false 
 var stala_sily_wystrzalu: float = 500.0 
 
-# --- ZMIENNE PROCY ---
+# ZMIENNE PROCY 
 var laduje_energie: bool = false
 var aktualna_sila: float = 0.0
 var maksymalna_sila: float = 2000.0 
 var szybkosc_ladowania: float = 1500.0 
 
-# Pobieramy pasek energii (dodaj węzeł ProgressBar do Rakiety i nazwij go "ProgressBar")
+# PROGRESS BAR
 @onready var pasek_energii = $ProgressBar 
 
 func _ready() -> void:
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	rotation += deg_to_rad(90)
 	
-	# Ładowanie paska (działa tylko, gdy tryb procy jest włączony)
+	# Ładowanie paska 
 	if uzywaj_procy and laduje_energie:
 		aktualna_sila += szybkosc_ladowania * delta
 		if aktualna_sila > maksymalna_sila:
@@ -48,23 +48,24 @@ func _input(event: InputEvent) -> void:
 	if w_locie or zadokowana: return
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		# --- TRYB 1: Z PROCĄ ---
+		#TRYB 1: Z PROCĄ 
 		if uzywaj_procy:
 			if event.pressed:
-				# Wciśnięcie: Zaczynamy ładować energię
+				# wcisnięcie: zaczynamy ładowac energie
 				laduje_energie = true
 				aktualna_sila = 0.0
 				if pasek_energii:
 					pasek_energii.show()
 			else:
-				# Puszczenie: Wystrzał z naładowaną siłą
+				# puszczenie : wystrzał z wybrana energia
 				laduje_energie = false
+				#	WZÓR STUDNIA GRAWITACYJNA
 				predkosc = (get_global_mouse_position() - global_position).normalized() * aktualna_sila
 				w_locie = true
 				if pasek_energii:
 					pasek_energii.hide()
 		
-		# --- TRYB 2: STANDARDOWY ---
+		#TRYB 2: STANDARDOWY
 		else:
 			if not event.pressed:
 				# Zwykłe kliknięcie = natychmiastowy strzał
@@ -74,20 +75,21 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if not w_locie or zadokowana: return
 	
-	# KLUCZOWY FIX: Reset przyspieszenia co klatke
 	przyspieszenie = Vector2.ZERO
 	
 	var planety = get_tree().get_nodes_in_group("planety")
 	
+	# PĘTLA FOR ODPOWIADA ZA ZNAK SUMY (SUPERPOZYCJA SIŁ)
 	for p in planety:
+		#PRAWO POWSZECHNEGO CIĄŻENIA
 		var wektor_odleglosci = p.global_position - global_position
 		var r_kwadrat = max(wektor_odleglosci.length_squared(), 1000.0) 
 		var kierunek = wektor_odleglosci.normalized()
 		var wartosc_sily = stala_grawitacyjna * (p.masa * masa) / r_kwadrat
+		#DRUGA ZASADA DYNAMIKI 
 		przyspieszenie += (kierunek * wartosc_sily) / masa
-
+#CAŁKOWANIE NUMERYCZNE
 	predkosc += przyspieszenie * delta
-	
 	var kolizja = move_and_collide(predkosc * delta)
 	
 	if kolizja:
