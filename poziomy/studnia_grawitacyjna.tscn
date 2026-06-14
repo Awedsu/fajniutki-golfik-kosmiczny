@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_voq76"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_6285x"]
+[ext_resource type="PackedScene" uid="uid://bk7844gdsfjca" path="res://poziomy/pulapka_gestosci.tscn" id="3_e518j"]
 [ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_eawjj"]
-[ext_resource type="PackedScene" uid="uid://b562ycw6crnlb" path="res://poziomy/poziom_2.tscn" id="3_voq76"]
 [ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_pxtvr"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="7_1xw0o"]
 [ext_resource type="PackedScene" uid="uid://caww2grsvaysj" path="res://sceny/bariera.tscn" id="7_6285x"]
@@ -17,9 +17,12 @@ metadata/_snap_enabled = true
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e518j"]
 bg_color = Color(0.8828557, 0, 0.08618713, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e518j"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrvyw"]
 resource_local_to_scene = true
 size = Vector2(40, 668)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e518j"]
+font_size = 21
 
 [node name="Poziom1" type="Node2D" unique_id=1531625699]
 
@@ -53,7 +56,7 @@ z_index = 6
 position = Vector2(1213, 359)
 rotation = 1.5707964
 scale = Vector2(0.3891677, 0.78731394)
-nastepny_poziom = ExtResource("3_voq76")
+nastepny_poziom = ExtResource("3_e518j")
 
 [node name="Planeta" parent="." unique_id=902311260 instance=ExtResource("3_eawjj")]
 position = Vector2(303, 257)
@@ -83,7 +86,7 @@ offset_bottom = 1109.0
 
 [node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
 position = Vector2(10, 775)
-shape = SubResource("RectangleShape2D_e518j")
+shape = SubResource("RectangleShape2D_yrvyw")
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0
@@ -102,5 +105,21 @@ offset_bottom = 80.0
 text = "WRÓĆ DO MENU
 "
 script = ExtResource("8_6wt0a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1388646485]
+offset_left = 544.0
+offset_right = 1011.0
+offset_bottom = 283.0
+
+[node name="Tytul" type="Label" parent="VBoxContainer" unique_id=1520538871]
+layout_mode = 2
+text = "STUDNIA GRAWITACYJNA (PRĘDKOŚĆ UCIECZKI)"
+label_settings = SubResource("LabelSettings_e518j")
+
+[node name="Opis" type="Label" parent="VBoxContainer" unique_id=418689129]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "Grawitacja to bezlitosna pułapka, która nie puszcza bez walki. Przelot obok tej planety wymaga czegoś więcej niż tylko dobrego kierunku – musisz wyrwać się z jej studni grawitacyjnej. Ustaw zbyt małą siłę wystrzału, a zostaniesz brutalnie ściągnięty na jej powierzchnię. Przesadź z mocą, a zignorujesz grawitację całkowicie i przestrzelisz cel. Skalibruj ciąg silników perfekcyjnie, pokonaj przyciąganie i zaserwuj bezbłędne dokowanie."
+autowrap_mode = 2
 
 [editable path="Bariera"]

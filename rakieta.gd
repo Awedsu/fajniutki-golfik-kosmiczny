@@ -71,6 +71,10 @@ func _input(event: InputEvent) -> void:
 				predkosc = (get_global_mouse_position() - global_position).normalized() * stala_sily_wystrzalu
 				w_locie = true
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_R:
+		get_tree().reload_current_scene()
+
 func _physics_process(delta: float) -> void:
 	if not w_locie or zadokowana: return
 	
@@ -102,3 +106,4 @@ func _physics_process(delta: float) -> void:
 	
 	if predkosc != Vector2.ZERO:
 		rotation = predkosc.angle() + deg_to_rad(90)
+		

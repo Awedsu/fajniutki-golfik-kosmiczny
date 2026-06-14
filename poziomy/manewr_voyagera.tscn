@@ -13,6 +13,9 @@ offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
 
+[sub_resource type="LabelSettings" id="LabelSettings_5fqj0"]
+font_size = 21
+
 [node name="manewr_voyagera" type="Node2D" unique_id=1531625699]
 
 [node name="Tlo" type="ColorRect" parent="." unique_id=1501720601]
@@ -68,3 +71,18 @@ offset_bottom = 80.0
 text = "WRÓĆ DO MENU
 "
 script = ExtResource("8_o21b2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1620525497]
+offset_right = 328.0
+offset_bottom = 283.0
+
+[node name="Tytul" type="Label" parent="VBoxContainer" unique_id=957278786]
+layout_mode = 2
+text = "MANEWR VOYAGERA (ASYSTA GRAWITACYJNA)"
+label_settings = SubResource("LabelSettings_5fqj0")
+
+[node name="Opis" type="Label" parent="VBoxContainer" unique_id=706668214]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "Najkrótsza droga nie zawsze prowadzi do celu. Aby pomyślnie zadokować, musisz precyzyjnie wykorzystać pole grawitacyjne planety. Zbliż się do niej pod odpowiednim kątem, wpadając w jej studnię grawitacyjną. Siła przyciągania zakrzywi twoją trajektorię i nada rakiecie potężne przyspieszenie, wyrzucając ją prosto do stacji. Oblicz ten manewr perfekcyjnie, albo twoja misja zakończy się w kosmicznej pustce."
+autowrap_mode = 2
