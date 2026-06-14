@@ -42,7 +42,6 @@ func spawn_flying_object() -> void:
 	
 	var screen_size = get_viewport_rect().size
 	
-	# Losujemy stronę: true = lewa, false = prawa
 	var leci_z_lewej = randi() % 2 == 0
 	
 	# X w zależności od wylosowanej strony
@@ -53,7 +52,6 @@ func spawn_flying_object() -> void:
 	var start_y = randf_range(100, screen_size.y - 100)
 	var end_y = randf_range(100, screen_size.y - 100)
 	
-	# Jeśli obiekt to rakieta to obracamy tak, aby nie leciała bokiem
 	if flyingObj.texture == RAKIETA_IMG:
 		var start_pos = Vector2(start_x, start_y)
 		var end_pos = Vector2(end_x, end_y)
@@ -62,7 +60,7 @@ func spawn_flying_object() -> void:
 	
 	flyingObj.global_position = Vector2(start_x, start_y)
 	
-	# Płynny lot do nowej pozycji
+
 	var tween = create_tween()
 	tween.tween_property(flyingObj, "global_position", Vector2(end_x, end_y), 4.0)
 	tween.tween_callback(flyingObj.queue_free)

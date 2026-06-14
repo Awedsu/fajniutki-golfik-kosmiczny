@@ -13,7 +13,7 @@ func _ogarnij_kolizje() -> void:
 	var kolizja = $CollisionShape2D
 	
 	if rect and kolizja and kolizja.shape is RectangleShape2D:
-		# Mnożymy przez scale, na wypadek gdybyś jednak bawił się narzędziem skalowania
+		# do skalowania
 		kolizja.shape.size = rect.size * rect.scale
 		kolizja.position = rect.position + (kolizja.shape.size / 2.0)
 		kolizja.rotation = rect.rotation
