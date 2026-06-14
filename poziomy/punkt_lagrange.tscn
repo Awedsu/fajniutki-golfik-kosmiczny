@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_1hh7g"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_b2ycd"]
+[ext_resource type="PackedScene" uid="uid://covhgl8an0cyh" path="res://poziomy/studnia_grawitacyjna.tscn" id="3_8pdvq"]
 [ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_osrp5"]
 [ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_7q55o"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="7_pf53y"]
@@ -45,6 +46,7 @@ hue_variation_max = 0.09
 [node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_b2ycd")]
 z_index = 6
 position = Vector2(640, 32)
+nastepny_poziom = ExtResource("3_8pdvq")
 
 [node name="Planeta" parent="." unique_id=902311260 instance=ExtResource("3_osrp5")]
 position = Vector2(536, 320)

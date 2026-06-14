@@ -17,7 +17,7 @@ metadata/_snap_enabled = true
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e518j"]
 bg_color = Color(0.8828557, 0, 0.08618713, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrvyw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e518j"]
 resource_local_to_scene = true
 size = Vector2(40, 668)
 
@@ -86,7 +86,7 @@ offset_bottom = 1109.0
 
 [node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
 position = Vector2(10, 775)
-shape = SubResource("RectangleShape2D_yrvyw")
+shape = SubResource("RectangleShape2D_e518j")
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0

@@ -13,7 +13,7 @@ offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3kth"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2n86"]
 resource_local_to_scene = true
 size = Vector2(40, 668)
 
@@ -76,7 +76,7 @@ offset_bottom = 1172.0
 
 [node name="CollisionShape2D" parent="Bariera" index="1" unique_id=1355329721]
 position = Vector2(15, 838)
-shape = SubResource("RectangleShape2D_e3kth")
+shape = SubResource("RectangleShape2D_c2n86")
 
 [node name="PrzyciskReset" type="Button" parent="." unique_id=1190058024]
 offset_left = 1159.0
