@@ -20,5 +20,5 @@ func _physics_process(delta: float) -> void:
 	#p_nowe=p_stare+v_nowe * delta*t
 	position += predkosc * delta
 	
-	# zerujemy przyspieszenie po każdej klatce zeby w następnej policzyć je na nowo 
+	# zerowanie przyspieszenia po każdej klatce zeby w następnej policzyć je na nowo 
 	przyspieszenie = Vector2(0, 0)
