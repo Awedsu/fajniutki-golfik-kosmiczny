@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b4nckhlwrv8ff" path="res://media/gwiazda.png" id="1_1hh7g"]
 [ext_resource type="PackedScene" uid="uid://fuh1aglfk03e" path="res://sceny/stacja.tscn" id="2_b2ycd"]
+[ext_resource type="PackedScene" uid="uid://covhgl8an0cyh" path="res://poziomy/studnia_grawitacyjna.tscn" id="3_8pdvq"]
 [ext_resource type="PackedScene" uid="uid://dxoqcxffual6s" path="res://sceny/planeta.tscn" id="3_osrp5"]
 [ext_resource type="PackedScene" uid="uid://dw307medn2g5h" path="res://sceny/rakieta.tscn" id="4_7q55o"]
 [ext_resource type="Script" uid="uid://drcbmtpuralmv" path="res://button.gd" id="7_pf53y"]
@@ -11,6 +12,9 @@
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 metadata/_snap_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_7q55o"]
+font_size = 21
 
 [node name="Punkt_lagrange" type="Node2D" unique_id=1531625699]
 
@@ -42,6 +46,7 @@ hue_variation_max = 0.09
 [node name="Stacja" parent="." unique_id=1549769111 instance=ExtResource("2_b2ycd")]
 z_index = 6
 position = Vector2(640, 32)
+nastepny_poziom = ExtResource("3_8pdvq")
 
 [node name="Planeta" parent="." unique_id=902311260 instance=ExtResource("3_osrp5")]
 position = Vector2(536, 320)
@@ -75,6 +80,21 @@ offset_bottom = 80.0
 text = "WRÓĆ DO MENU
 "
 script = ExtResource("8_285ai")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=644747619]
+offset_right = 328.0
+offset_bottom = 283.0
+
+[node name="Tytul" type="Label" parent="VBoxContainer" unique_id=59499824]
+layout_mode = 2
+text = "PUNKT LAGRANGE'A (RÓWNOWAGA SIŁ)"
+label_settings = SubResource("LabelSettings_7q55o")
+
+[node name="Opis" type="Label" parent="VBoxContainer" unique_id=1123085655]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "Czasami najlepszym manewrem jest brak kombinowania. Przed tobą dwa ciała niebieskie o identycznej masie. Jeśli wycelujesz rakietę perfekcyjnie w środek między nimi, przetniesz punkt równowagi, w którym ich siły grawitacyjne idealnie się znoszą. W tej strefie przyciąganie przestaje ściągać cię z kursu. Zaufaj fizyce, wystrzel prosto jak po sznurku i ciesz się najbezpieczniejszym lotem w swojej karierze."
+autowrap_mode = 2
 
 [editable path="Planeta"]
 [editable path="Planeta2"]

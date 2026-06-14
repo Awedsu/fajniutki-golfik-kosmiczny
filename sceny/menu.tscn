@@ -50,6 +50,7 @@ expand = true
 loop = true
 
 [node name="KosmycznyGolf" type="TextureRect" parent="TextureRect" unique_id=1712559897]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -64,7 +65,6 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Bystrosc" type="TextureRect" parent="." unique_id=1043015053]
-z_index = 10
 layout_mode = 0
 offset_left = 528.0
 offset_top = 320.0

@@ -70,5 +70,7 @@ offset_left = 64.0
 offset_top = 320.0
 offset_right = 400.0
 offset_bottom = 464.0
-text = "Aby wystrzelić rakietę, po prostu nakieruj myszką tam, gdzie chcesz aby poleciała, a następnie wciśnij lewy przycisk myszy!"
+text = "Aby wystrzelić rakietę, po prostu nakieruj myszką tam, gdzie chcesz aby poleciała, a następnie wciśnij lewy przycisk myszy!
+
+W każdym momencie możesz zresetować poziom wciskając przycisk R."
 autowrap_mode = 3
