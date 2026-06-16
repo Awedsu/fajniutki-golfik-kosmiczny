@@ -37,7 +37,7 @@ Gra realizuje zaawansowane koncepcje fizyczne i architektoniczne, eliminując ty
 ## Instalacja i Uruchomienie
 
 1. Sklonuj repozytorium:
-   > git clone https://github.com/Awedsu/orbital-gravity-simulator.git
+   > git clone https://github.com/Awedsu/fajniutki-golfik-kosmiczny.git
 
 2. Otwórz program **Godot Engine 4.6.2**.
 3. Kliknij **Import**, wskaż folder z projektem i wybierz plik `project.godot`.
