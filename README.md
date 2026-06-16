@@ -1,4 +1,4 @@
-# Orbital Mechanics & Gravity Simulator
+# Fajniutki Kosmiczny Golf
 
 Projekt edukacyjno-symulacyjny stworzony w silniku **Godot Engine 4.6.2**, skupiający się na odtworzeniu realnych zjawisk fizycznych związanych z astrodynamiką i grawitacją w przestrzeni kosmicznej. Gracz kontroluje trajektorię lotu rakiety (lub całej floty), manipulując siłą ciągu oraz wykorzystując oddziaływanie grawitacyjne ciał niebieskich, aby bezpiecznie zadokować w stacji orbitalnej.
 
