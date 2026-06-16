@@ -37,11 +37,9 @@ Gra realizuje zaawansowane koncepcje fizyczne i architektoniczne, eliminując ty
 ## Instalacja i Uruchomienie
 
 1. Sklonuj repozytorium:
-   > git clone https://github.com/twoj-username/orbital-gravity-simulator.git
+   > git clone https://github.com/Awedsu/orbital-gravity-simulator.git
 
-2. Otwórz program **Godot Engine 4**.
-3. Kliknij **Import**, wskaż folder z projektem i wybierz plik `project.godot`.
-4. Uruchom projekt za pomocą klawisza **F5**.
+2. Otwórz program **Fajniutki Kosmiczny Golf.exe**.
 
 ---
 *Projekt stworzony z pasją do fizyki i czystej architektury kodu.*
