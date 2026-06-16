@@ -28,7 +28,7 @@ Gra realizuje zaawansowane koncepcje fizyczne i architektoniczne, eliminując ty
 
 ## Technologie i Architektura
 
-* **Silnik:** Godot Engine 4.x
+* **Silnik:** Godot Engine 4.6.2
 * **Język skryptowy:** GDScript
 * **Główne Węzły:** `CharacterBody2D` (Rakieta), `StaticBody2D` (Planety/Bariery), `Area2D` (Stacja), `Control` (Dynamiczne GUI / Kontenery).
 
